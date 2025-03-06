@@ -6,10 +6,29 @@
     <title>Unity WebGL Player | ActiveTraider</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+	<style>
+      body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden; /* Убираем скроллинг */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Высота всей страницы = высота окна */
+        background: #231F20; /* Цвет фона за пределами канваса */
+      }
+      #unity-canvas {
+        width: 100vw; /* Ширина = ширина окна */
+        height: 100vh; /* Высота = высота окна */
+        max-width: 56.25vh; /* Ограничиваем ширину для 9:16 (9/16 = 0.5625) */
+        max-height: 100vh; /* Ограничиваем высоту */
+        object-fit: contain; /* Сохраняем пропорции */
+      }
+    </style>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <canvas id="unity-canvas" tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
