@@ -4,9 +4,28 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | ActiveTraider</title>
+	<style>
+      body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden; /* Убираем скроллинг */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Высота всей страницы = высота окна */
+        background: #231F20; /* Цвет фона за пределами канваса */
+      }
+      #unity-canvas {
+        width: 100vw; /* Ширина = ширина окна */
+        height: 100vh; /* Высота = высота окна */
+        max-width: 56.25vh; /* Ограничиваем ширину для 9:16 (9/16 = 0.5625) */
+        max-height: 100vh; /* Ограничиваем высоту */
+        object-fit: contain; /* Сохраняем пропорции */
+      }
+    </style>
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas>
+	<canvas id="unity-canvas" tabindex="-1"></canvas>
     <script src="Build/Build.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
